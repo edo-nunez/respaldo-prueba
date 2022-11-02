@@ -1,0 +1,28 @@
+<ion-card *ngFor="let pro of productos">
+  <ion-card-header>
+    <ion-card-title>
+      {{ pro.nombre }}
+    </ion-card-title>
+    <ion-card-subtitle>
+      {{pro.precioVenta | currency:'CLP'}}
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-label>
+      <ion-chip [color]="pro.stock<15?'danger':'primary'">Stock actual : {{pro.stock}}</ion-chip>
+    </ion-label>
+    <ion-item-divider></ion-item-divider>
+    <ion-label>
+      {{ pro.descripcion }}
+      {{pro.id}}
+    </ion-label>
+    <ion-item-divider></ion-item-divider>
+    <ion-button [routerLink]="['detalle', pro.id]">Detalle</ion-button>
+  </ion-card-content>
+
+</ion-card>
+<!-- Infinite Scroll -->
+<ion-infinite-scroll (ionInfinite)="cargarMasDatos()">
+  <ion-infinite-scroll-content loadingText="Cargando mas datos...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>

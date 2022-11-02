@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalle</ion-title>
+    <ion-back-button></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="productoActivo">
+
+    <ion-title> {{productoActivo.nombre}}</ion-title>
+    <ion-card-content>
+      <p>{{productoActivo.descripcion}}</p>
+      <ion-button (click)="addCart()">Agregar al carro</ion-button>
+    </ion-card-content>
+
+
+  </ion-card>
+
+</ion-content>

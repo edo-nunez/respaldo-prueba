@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>carrito</ion-title>
+    <ion-back-button></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of carro">
+    {{item.producto.nombre}} &nbsp; {{item.cantidad}}
+  </ion-card>
+
+</ion-content>

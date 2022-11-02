@@ -11,6 +11,14 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./paginas/inicio/inicio.module').then(m => m.InicioPageModule)
   },
+  {
+    path: 'detalle/:idProducto',
+    loadChildren: () => import('./paginas/detalle/detalle.module').then(m => m.DetallePageModule)
+  },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
 ];
 
 @NgModule({
