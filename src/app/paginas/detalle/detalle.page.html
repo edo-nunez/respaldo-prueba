@@ -1,20 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detalle</ion-title>
-    <ion-back-button></ion-back-button>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card *ngIf="productoActivo">
+  <div class="contenedor" *ngIf="productoActivo">
 
-    <ion-title> {{productoActivo.nombre}}</ion-title>
-    <ion-card-content>
-      <p>{{productoActivo.descripcion}}</p>
-      <ion-button (click)="addCart()">Agregar al carro</ion-button>
-    </ion-card-content>
+    <h5 class="card-title text-center mb-2">{{productoActivo.nombre | uppercase}}</h5>
 
+    <div class="text-center mb-2">
+      <img [src]="productoActivo.foto" class="card-img-top rounded shadow" alt="...">
+    </div>
 
-  </ion-card>
+    <div class="card shadow mb-3" *ngIf="productoActivo">
+      <div class="card-body">
+
+        <div class="text-center mb-2">
+          <ion-label>
+            <ion-chip [color]="productoActivo.stock<15?'danger':'primary'">Stock actual : {{productoActivo.stock}}
+            </ion-chip>
+            <ion-chip color="dark" [outline]="true">{{productoActivo.precioVenta | currency:'CLP'}}</ion-chip>
+          </ion-label>
+        </div>
+
+        <p class="card-text">{{productoActivo.descripcion}}</p>
+
+      </div>
+
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-dark" type="button" (click)="addCart()">Agregar al carrito</button>
+      <button type="button" class="btn btn-outline-dark" [routerLink]="['/']">Volver</button>
+    </div>
+  </div>
 
 </ion-content>

@@ -19,6 +19,22 @@ const routes: Routes = [
     path: 'carrito',
     loadChildren: () => import('./paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./paginas/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./paginas/auth/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./paginas/agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
 ];
 
 @NgModule({

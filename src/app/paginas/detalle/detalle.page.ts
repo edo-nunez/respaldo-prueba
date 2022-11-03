@@ -48,11 +48,7 @@ export class DetallePage implements OnInit {
 
   public addCart() {
     this.carroService.agregarCarro(this.productoActivo);
-    console.log("click")
+    alert("Producto agregado al carrito")
   }
-
-
-
-
 
 }

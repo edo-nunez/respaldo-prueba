@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="contenedor text-center">
+    <h3>Login</h3>
+
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input formControlName="email" type="text" class="form-control" placeholder="ejemplo@email.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input formControlName="password1" type="password" class="form-control" placeholder="Contraseña">
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-dark" [disabled]="!loginForm.valid">Iniciar sesión</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</ion-content>

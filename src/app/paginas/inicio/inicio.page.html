@@ -1,11 +1,22 @@
 <ion-content>
-  <div class="navbar">
-    <div class="nav-items">
-      <ion-button [routerLink]="['/carrito']">Cart</ion-button>
-    </div>
-  </div>
 
-  <app-carrito [carro]="carritoCompras"></app-carrito>
+  <ion-grid class="mt-5">
+    <ion-row>
+      <ion-col>
+        <button type="button" class="btn btn-dark position-relative" [routerLink]="['/login']">
+          Lo<span
+            class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span
+              class="visually-hidden">unread messages</span></span>
+        </button>
+      </ion-col>
+      <ion-col size="7" class="text-center">2</ion-col>
+      <ion-col><button type="button" class="btn btn-dark position-relative" [routerLink]="['/carrito']">
+          <ion-icon name="cart-sharp"></ion-icon><span
+            class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span
+              class="visually-hidden">unread messages</span></span>
+        </button></ion-col>
+    </ion-row>
+  </ion-grid>
 
   <div class="contenedor">
 

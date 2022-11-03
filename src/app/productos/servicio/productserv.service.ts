@@ -48,5 +48,13 @@ export class ProductservService {
     return this.http.get<ProductoConID | null>(`${this.URL_PRODUCTO}/${id}`);
   }
 
+  public agregarProducto(producto: Producto) {
+    return this.http.post(this.URL_PRODUCTO, producto, {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      }
+    })
+  }
+
 
 }
