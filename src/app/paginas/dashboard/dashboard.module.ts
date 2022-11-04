@@ -10,6 +10,7 @@ import { DashboardPage } from './dashboard.page';
 import { ProductservService } from 'src/app/productos/servicio/productserv.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AgregarPage } from '../agregar/agregar.page';
+import { ListaProductoComponent } from 'src/app/productos/componentes/lista-producto/lista-producto.component';
 
 @NgModule({
   imports: [

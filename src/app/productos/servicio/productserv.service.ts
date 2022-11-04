@@ -44,7 +44,7 @@ export class ProductservService {
   }
 
   public obtenerProductoPorID(id: number): Observable<ProductoConID | null> {
-    // http://localhost:3000/productos/1 -> GET
+
     return this.http.get<ProductoConID | null>(`${this.URL_PRODUCTO}/${id}`);
   }
 
@@ -52,6 +52,19 @@ export class ProductservService {
     return this.http.post(this.URL_PRODUCTO, producto, {
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
+      }
+    })
+  }
+
+  public eliminarProductoPorID(id: number): Observable<any> {
+    // http://localhost:3000/productos/2 -> DELETE
+    return this.http.delete(`${this.URL_PRODUCTO}/${id}`)
+  }
+
+  public editarPorID(id: number, payload: ProductoParcial): Observable<any> {
+    return this.http.patch(`${this.URL_PRODUCTO}/${id}`, payload, {
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
       }
     })
   }

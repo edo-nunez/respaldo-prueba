@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Eliminar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="contenedor" *ngIf="productoActivo">
+
+    <h5 class="card-title text-center mb-2">{{productoActivo.nombre | uppercase}}</h5>
+
+    <div class="text-center mb-2">
+      <img [src]="productoActivo.foto" class="card-img-top rounded shadow" alt="...">
+    </div>
+
+    <div class="card shadow mb-3" *ngIf="productoActivo">
+      <div class="card-body">
+
+        <div class="text-center mb-2">
+          <ion-label>
+            <ion-chip [color]="productoActivo.stock<15?'danger':'primary'">Stock actual : {{productoActivo.stock}}
+            </ion-chip>
+            <ion-chip color="dark" [outline]="true">{{productoActivo.precioVenta | currency:'CLP'}}</ion-chip>
+          </ion-label>
+        </div>
+
+        <p class="card-text">{{productoActivo.descripcion}}</p>
+
+      </div>
+
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-danger" type="button" (click)="borrar()">Eliminar</button>
+      <button type="button" class="btn btn-outline-dark" [routerLink]="['/dashboard']">Volver</button>
+    </div>
+  </div>
+
+
+</ion-content>

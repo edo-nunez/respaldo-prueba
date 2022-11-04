@@ -17,23 +17,31 @@ const routes: Routes = [
   },
   {
     path: 'carrito',
-    loadChildren: () => import('./paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
+    loadChildren: () => import('./paginas/carrito/carrito.module').then(m => m.CarritoPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./paginas/auth/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./paginas/auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./paginas/auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./paginas/auth/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./paginas/dashboard/dashboard.module').then(m => m.DashboardPageModule)
   },
   {
     path: 'agregar',
-    loadChildren: () => import('./paginas/agregar/agregar.module').then( m => m.AgregarPageModule)
+    loadChildren: () => import('./paginas/agregar/agregar.module').then(m => m.AgregarPageModule)
+  },
+  {
+    path: 'eliminar/:idProducto',
+    loadChildren: () => import('./paginas/eliminar/eliminar.module').then(m => m.EliminarPageModule)
+  },
+  {
+    path: 'modificar/:idProducto',
+    loadChildren: () => import('./paginas/modificar/modificar.module').then(m => m.ModificarPageModule)
   },
 ];
 

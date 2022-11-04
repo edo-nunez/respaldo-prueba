@@ -12,6 +12,14 @@ const routes: Routes = [
     path: 'agregar',
     loadChildren: () => import('./../agregar/agregar.module').then(m => m.AgregarPageModule)
   },
+  {
+    path: 'eliminar/:idProducto',
+    loadChildren: () => import('./../eliminar/eliminar.module').then(m => m.EliminarPageModule)
+  },
+  {
+    path: 'modificar/:idProducto',
+    loadChildren: () => import('./../modificar/modificar.module').then(m => m.ModificarPageModule)
+  }
 ];
 
 @NgModule({

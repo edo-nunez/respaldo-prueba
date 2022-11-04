@@ -1,16 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>listar</ion-title>
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="contenedor">
+    <div class="card mb-3 shadow" *ngFor="let pro of productos">
+      <img [src]="pro.foto" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">{{pro.nombre | uppercase}}</h5>
+
+        <p class="card-text">{{pro.descripcion}}
+        </p>
+
+        <div class="text-center mb-2">
+          <ion-label>
+            <ion-chip [color]="pro.stock<15?'danger':'primary'">Stock actual : {{pro.stock}}</ion-chip>
+            <ion-chip color="success" [outline]="true">{{pro.precioVenta | currency:'CLP'}}</ion-chip>
+          </ion-label>
+        </div>
+
+        <div class="d-grid gap-2 mb-2">
+          <button class="btn btn-dark" type="button" [routerLink]="['detalle', pro.id]">Ver detalles</button>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="button" [routerLink]="['modificar',pro.id]">Editar</button>
+          <button class="btn btn-danger" type="button" [routerLink]="['eliminar',pro.id]">Eliminar</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Infinite Scroll -->
+    <ion-infinite-scroll (ionInfinite)="cargarMasDatos()">
+      <ion-infinite-scroll-content loadingText="Cargando mas datos...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </div>
+
+
   <!-- Boton flotante -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="['agregar']">
       <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 
 </ion-content>
