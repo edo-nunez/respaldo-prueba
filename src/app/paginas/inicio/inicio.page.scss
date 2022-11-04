@@ -1,12 +1,31 @@
 ion-content {
     --ion-text-color: black;
-    --ion-background-color: rgb(218, 218, 218);
+    --ion-background-color: rgb(255, 255, 255);
 }
 
-.navbar {
-    margin-top: 40px;
-    padding: 10px;
+.header {
+    position: relative;
 }
+
+.header h3 {
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.header h6 {
+    margin: 40px 0px 0px 20px;
+    font-size: small;
+
+}
+
+.profile {
+    position: absolute;
+    margin-left: 250px;
+    transform: translateY(-100%);
+}
+
 
 .contenedor {
     margin: 10px;
@@ -15,4 +34,17 @@ ion-content {
 
 .contenedor h3 {
     font-weight: bold;
+}
+
+.carta {
+    padding: 10px;
+    background-color: rgb(219, 219, 219);
+    height: auto;
+    width: auto;
+    border-radius: 15px;
+}
+
+.carro {
+    margin-top: 15px;
+    margin-left: 255px;
 }

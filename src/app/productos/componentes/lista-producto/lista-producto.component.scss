@@ -8,3 +8,40 @@ ion-card {
     margin-top: 2px;
     color: black;
 }
+
+.carta {
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    height: auto;
+    width: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.carta .img {
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.nombre h4 {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.nombre h5 {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.botones {
+
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.contenido {
+    margin-bottom: 10px;
+}

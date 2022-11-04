@@ -1,24 +1,33 @@
-<div class="card mb-3 shadow" *ngFor="let pro of productos">
-  <img [src]="pro.foto" class="card-img-top" alt="...">
+<div class="carta position-relative shadow" *ngFor="let pro of productos">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">{{pro.stock}}<span
+      class="visually-hidden">unread messages</span></span>
+  <div class="row">
 
-  <div class="card-body">
-    <h5 class="card-title">{{pro.nombre | uppercase}}</h5>
-
-    <p class="card-text">{{pro.descripcion}}
-    </p>
-
-    <div class="text-center mb-2">
-      <ion-label>
-        <ion-chip [color]="pro.stock<15?'danger':'primary'">Stock actual : {{pro.stock}}</ion-chip>
-        <ion-chip color="success" [outline]="true">{{pro.precioVenta | currency:'CLP'}}</ion-chip>
-      </ion-label>
+    <div class="col-5">
+      <div class="img">
+        <img [src]="pro.foto" class="img" alt="...">
+      </div>
     </div>
 
-    <div class="d-grid gap-2">
-      <button class="btn btn-dark" type="button" [routerLink]="['detalle', pro.id]">Ver detalles</button>
+    <div class="col-7">
+      <div class="nombre">
+        <h5>{{pro.nombre}}</h5>
+      </div>
+      <div class="contenido">
+        <div class="text-muted">
+          ${{pro.precioVenta}}
+        </div>
+      </div>
+      <div class="position-absolute bottom-0 end-0 botones">
+        <button type="button" class="btn btn-dark btn-sm" [routerLink]="['detalle',pro.id]">Detalles</button>
+
+      </div>
     </div>
+
+
 
   </div>
+
 </div>
 
 
