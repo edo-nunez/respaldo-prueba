@@ -35,4 +35,28 @@ export class CarritoPage implements OnInit {
     }
   }
 
+  public sumar(id: number) {
+    for (let i = 0; i < this.carro.length; i++) {
+      if (this.carro[i].producto.id === id) {
+        this.carro[i].cantidad++;
+
+        //console.log(cant)
+      }
+    }
+  }
+
+  public restar(id: number) {
+    for (let i = 0; i < this.carro.length; i++) {
+      if (this.carro[i].producto.id === id) {
+        const pos = this.carro.indexOf(this.carro[i])
+        this.carro[i].cantidad--;
+        if (this.carro[i].cantidad === 0) {
+          alert("Eliminado del carrito")
+          this.eliminar(id);
+        }
+      }
+    }
+
+  }
+
 }
