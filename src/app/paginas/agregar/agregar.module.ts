@@ -8,6 +8,7 @@ import { AgregarPageRoutingModule } from './agregar-routing.module';
 
 import { AgregarPage } from './agregar.page';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductservService } from 'src/app/productos/servicio/productserv.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  declarations: [AgregarPage]
+  declarations: [AgregarPage],
+  providers: [ProductservService]
 })
 export class AgregarPageModule { }

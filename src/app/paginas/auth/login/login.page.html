@@ -1,8 +1,9 @@
 <ion-content>
   <div class="contenedor text-center">
-    <h3>Login</h3>
 
-    <div class="card">
+    <img src="./../../../../assets/img/auth.svg" class="rounded mx-auto d-block" style="width: 180px;">
+    <h3>Iniciar sesión</h3>
+    <div class="card shadow">
       <div class="card-body">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
 
@@ -18,9 +19,14 @@
 
           <div class="d-grid gap-2">
             <button type="submit" class="btn btn-dark" [disabled]="!loginForm.valid">Iniciar sesión</button>
+
           </div>
 
         </form>
+
+        <div class="d-grid gap-2 mt-2">
+          <button type="button" class="btn btn-outline-dark" [routerLink]="['/']">Volver</button>
+        </div>
       </div>
     </div>
 
