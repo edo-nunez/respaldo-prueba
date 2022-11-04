@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>carrito</ion-title>
-    <ion-back-button></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi carrito</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,6 +15,7 @@
         {{item.producto.nombre}}
         <span class="badge bg-primary rounded-pill">{{item.cantidad}}</span>
       </li>
+      <button (click)="eliminar(item.producto.id)">Borrar</button>
     </ul>
   </div>
 </ion-content>

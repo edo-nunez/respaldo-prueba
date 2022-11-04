@@ -24,4 +24,15 @@ export class CarritoPage implements OnInit {
     console.log(this.carro);
   }
 
+  public eliminar(id: number) {
+    for (let i = 0; i < this.carro.length; i++) {
+      if (this.carro[i].producto.id === id) {
+        const pos = this.carro.indexOf(this.carro[i])
+        console.log(pos)
+        this.carro.splice(pos, 1);
+        alert("Eliminado del carrito")
+      }
+    }
+  }
+
 }
