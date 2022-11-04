@@ -12,11 +12,17 @@
 
     <ul class="list-group shadow" *ngFor="let item of carro">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{item.producto.nombre}}&nbsp;<button (click)="restar(item.producto.id)">-</button> &nbsp; <button
+        {{item.producto.nombre}} &nbsp; {{item.total}}
+        &nbsp;<button (click)="restar(item.producto.id)">-</button> &nbsp; <button
           (click)="sumar(item.producto.id)">+</button>
         <span class="badge bg-primary rounded-pill">{{item.cantidad}}</span>
       </li>
       <button (click)="eliminar(item.producto.id)">Borrar</button>
     </ul>
+
+    <div class="total">
+      <button (click)="sumaTotal()">Calcular total</button>
+      {{valorTotal}}
+    </div>
   </div>
 </ion-content>
