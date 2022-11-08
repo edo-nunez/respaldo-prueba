@@ -27,7 +27,7 @@ export class CarritoService {
       const add: Carro = {
         producto,
         cantidad: 1,
-        total: producto.precioVenta * 1
+        total: producto.precioVenta
       };
       this.carro.push(add);
     }

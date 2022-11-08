@@ -23,15 +23,13 @@ export class CarritoPage implements OnInit {
 
     let selected = {};
     for (let obj of this.carro) {
-      selected[obj.producto.id] = { ...obj, count: 1 };
+      selected[obj.producto.id] = { ...obj, count: 0 };
     }
 
     this.selectdItems = Object.keys(selected).map(key => selected[key])
     console.log(this.selectdItems);
-    this.valorTotal = this.selectdItems.reduce((a, b) => a + (b.cantidad + b.producto.precioVenta), 0);
+    this.valorTotal = this.selectdItems.reduce((a, b) => a + (b.producto.precioVenta), 0);
     console.log(this.valorTotal)
-
-
   }
 
   ionViewWillEnter() {
@@ -56,6 +54,7 @@ export class CarritoPage implements OnInit {
       if (this.carro[i].producto.id === id) {
         this.carro[i].cantidad++;
         this.carro[i].total = this.carro[i].total + this.carro[i].producto.precioVenta;
+        this.valorTotal += this.carro[i].producto.precioVenta;
       }
     }
   }
@@ -66,6 +65,7 @@ export class CarritoPage implements OnInit {
         const pos = this.carro.indexOf(this.carro[i])
         this.carro[i].cantidad--;
         this.carro[i].total = this.carro[i].total - (this.carro[i].producto.precioVenta)
+        this.valorTotal -= this.carro[i].producto.precioVenta;
         if (this.carro[i].cantidad === 0) {
           alert("Eliminado del carrito")
           this.eliminar(id);
