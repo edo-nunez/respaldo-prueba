@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'modificar/:idProducto',
     loadChildren: () => import('./paginas/modificar/modificar.module').then(m => m.ModificarPageModule)
   },
+  {
+    path: 'detail-dashboard',
+    loadChildren: () => import('./paginas/detail-dashboard/detail-dashboard.module').then( m => m.DetailDashboardPageModule)
+  },
 ];
 
 @NgModule({

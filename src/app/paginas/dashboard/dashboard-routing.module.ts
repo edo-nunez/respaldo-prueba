@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'modificar/:idProducto',
     loadChildren: () => import('./../modificar/modificar.module').then(m => m.ModificarPageModule)
+  },
+  {
+    path: 'detail/:idProducto',
+    loadChildren: () => import('./../detail-dashboard/detail-dashboard.module').then(m => m.DetailDashboardPageModule)
   }
 ];
 

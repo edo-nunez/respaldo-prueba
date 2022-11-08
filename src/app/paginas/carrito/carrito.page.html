@@ -17,12 +17,24 @@
           (click)="sumar(item.producto.id)">+</button>
         <span class="badge bg-primary rounded-pill">{{item.cantidad}}</span>
       </li>
-      <button (click)="eliminar(item.producto.id)">Borrar</button>
+      <button class="btn btn-danger mt-2" (click)="eliminar(item.producto.id)">Borrar</button>
     </ul>
 
-    <div class="total">
+    <ng-template [ngIf]="valorTotal===0">
+      <div class="card">
+        <div class="card-body">
+          <h4>Debes agregar productos al carrito</h4>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="valorTotal!=0">
+      <div class="card mt-2">
+        <div class="card-body">
+          <h4>Total a pagar: ${{valorTotal}}</h4>
+        </div>
+      </div>
 
-      {{valorTotal}}
-    </div>
+    </ng-template>
+
   </div>
 </ion-content>

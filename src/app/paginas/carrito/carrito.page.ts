@@ -33,9 +33,6 @@ export class CarritoPage implements OnInit {
   }
 
   ionViewWillEnter() {
-
-
-
   }
 
   public eliminar(id: number) {

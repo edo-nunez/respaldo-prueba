@@ -41,10 +41,18 @@ export class LoginPage implements OnInit {
             && a.password1 === this.loginForm.value.password1
         });
         if (user) {
-          alert("Login completo");
+
+
+          if (!user.admin) {
+            alert('Sin permisos!')
+            this.router.navigate(['/']);
+          } else {
+            alert('Pase mi rey')
+            this.router.navigate(['dashboard']);
+          }
           this.userLogged.push(user);
           this.loginForm.reset();
-          this.router.navigate(['dashboard']);
+
         } else {
           alert("Usuario no encontrado");
         }

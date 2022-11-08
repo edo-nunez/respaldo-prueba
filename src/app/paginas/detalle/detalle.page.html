@@ -1,3 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
 <ion-content>
   <div class="contenedor" *ngIf="productoActivo">
 
@@ -19,6 +29,22 @@
         </div>
 
         <p class="card-text">{{productoActivo.descripcion}}</p>
+        <p class="card-text">{{productoActivo.categoria}}</p>
+        <p class="card-text"> {{productoActivo.marca}}</p>
+        <p *ngIf="!productoActivo.descuento; then sindcto else condcto">
+          dcto: {{productoActivo.porcDecto}}
+        </p>
+        <ng-template #condcto>
+          dcto: {{productoActivo.porcDecto}}
+        </ng-template>
+        <ng-template #sindcto>
+          <p class="card-text">
+            Sin dcto
+          </p>
+        </ng-template>
+        <p class="card-text">
+          Modalidad de venta: {{productoActivo.modalidadVenta}}
+        </p>
 
       </div>
 

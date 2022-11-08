@@ -12,6 +12,9 @@ export class LoginService {
   constructor(
     private http: HttpClient
   ) { }
+  getUser() {
+    return this.userLogged;
+  }
 
   public login() {
     this.http.get<User>(this.URL_USER).
