@@ -11,18 +11,33 @@ export class CarritoPage implements OnInit {
 
   public carro: Array<Carro> = [];
   public valorTotal: number = 0;
+  public selectdItems = [];
 
   constructor(
     private carrito: CarritoService
   ) { }
 
   ngOnInit() {
+    this.carro = this.carrito.carro;
+    console.log(this.carro);
+
+    let selected = {};
+    for (let obj of this.carro) {
+      selected[obj.producto.id] = { ...obj, count: 1 };
+    }
+
+    this.selectdItems = Object.keys(selected).map(key => selected[key])
+    console.log(this.selectdItems);
+    this.valorTotal = this.selectdItems.reduce((a, b) => a + (b.cantidad + b.producto.precioVenta), 0);
+    console.log(this.valorTotal)
+
 
   }
 
   ionViewWillEnter() {
-    this.carro = this.carrito.carro;
-    console.log(this.carro);
+
+
+
   }
 
   public eliminar(id: number) {
@@ -41,7 +56,6 @@ export class CarritoPage implements OnInit {
       if (this.carro[i].producto.id === id) {
         this.carro[i].cantidad++;
         this.carro[i].total = this.carro[i].total + this.carro[i].producto.precioVenta;
-
       }
     }
   }
@@ -62,11 +76,6 @@ export class CarritoPage implements OnInit {
 
   public sumaTotal() {
 
-    for (let i = 0; i < this.carro.length; i++) {
-
-      this.valorTotal += this.carro[i].total
-      console.log(this.valorTotal);
-    }
   }
 
 }

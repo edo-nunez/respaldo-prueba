@@ -11,8 +11,11 @@ export class CarritoService {
 
   constructor() { }
 
-  public agregarCarro(producto: ProductoConID) {
+  getCarrito() {
+    return this.carro;
+  }
 
+  public agregarCarro(producto: ProductoConID) {
     const item = this.carro.find(productoItem => {
       return (productoItem.producto.id === producto.id)
     })
@@ -30,6 +33,10 @@ export class CarritoService {
     }
 
     console.log(this.carro)
+  }
+
+  public vaciarCarro() {
+    this.carro = [];
   }
 
 

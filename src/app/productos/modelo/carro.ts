@@ -4,4 +4,6 @@ export interface Carro {
     producto: ProductoConID,
     cantidad: number,
     total: number
+
+
 }
